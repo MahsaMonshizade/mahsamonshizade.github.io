@@ -4,378 +4,334 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahsa Monshizadeh</title>
-  <meta name="description" content="Mahsa Monshizadeh — PhD student in Computer Science working on trustworthy ML, GenAI/RAG, LLM benchmarking, and biomedical AI." />
+  <meta name="description" content="Mahsa Monshizadeh — PhD student in Computer Science at Indiana University working on trustworthy ML, GenAI/RAG systems, LLM benchmarking, and biomedical AI." />
 
   <style>
+    :root {
+      --text: #111111;
+      --muted: #333333;
+      --link: #2f5da8;
+      --line: #e5e5e5;
+      --nav-blue: #4f7bd9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f8fafc;
-      color: #111827;
-      line-height: 1.6;
+      background: #ffffff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
     }
 
-    .container {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 40px 24px;
+    a {
+      color: var(--link);
+      text-decoration: none;
     }
 
-    header {
-      padding: 48px 0 32px;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 0 0 48px;
+      padding-bottom: 48px;
     }
 
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 56px;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    nav strong {
-      font-size: 1.1rem;
+      gap: 34px;
+      height: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 42px;
     }
 
     nav a {
-      margin-left: 18px;
-      color: #4f46e5;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.5fr 0.8fr;
-      gap: 36px;
+      color: #000;
+      height: 40px;
+      display: flex;
       align-items: center;
+      border-bottom: 3px solid transparent;
     }
 
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.7rem);
-      line-height: 1.05;
-      letter-spacing: -0.06em;
-      margin: 0 0 20px;
+    nav a.active {
+      color: var(--link);
+      border-bottom-color: var(--nav-blue);
     }
 
-    h2 {
-      font-size: 2rem;
-      letter-spacing: -0.04em;
-      margin-top: 0;
-    }
-
-    h3 {
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      font-size: 1.22rem;
-      color: #4b5563;
-      max-width: 720px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eef2ff;
-      color: #4f46e5;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.9rem;
+    .intro {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 32px;
+      align-items: start;
       margin-bottom: 18px;
     }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
+    .profile-photo {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #f2f2f2;
+      border: 1px solid #eeeeee;
     }
 
-    .button {
-      display: inline-block;
-      padding: 11px 16px;
-      border-radius: 12px;
-      background: white;
-      border: 1px solid #e5e7eb;
-      color: #111827;
-      text-decoration: none;
+    .name {
+      font-size: 24px;
       font-weight: 700;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+      margin: 2px 0 18px;
     }
 
-    .button.primary {
-      background: #4f46e5;
-      color: white;
-      border-color: #4f46e5;
+    .info p {
+      margin: 0 0 4px;
     }
 
-    .card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+    .bio {
+      margin-top: 18px;
+      text-align: justify;
+      max-width: 860px;
     }
 
-    .profile-card {
-      border-radius: 28px;
-      padding: 26px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-    }
-
-    .muted {
-      color: #4b5563;
-    }
-
-    section {
-      padding: 34px 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .tag-list {
+    .contact-icons {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+      gap: 16px;
+      align-items: center;
+      margin: 28px 0 32px;
+      font-size: 23px;
     }
 
-    .tag {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      color: #374151;
-      font-size: 0.86rem;
-      font-weight: 650;
-    }
-
-    .project-link {
-      color: #4f46e5;
+    .contact-icons a {
+      color: #000;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 30px 0 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 28px;
+    }
+
+    .interest {
+      margin-bottom: 20px;
+    }
+
+    .interest-title {
+      font-weight: 800;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .interest p {
+      margin: 0;
+    }
+
+    .publication-list {
+      padding-left: 18px;
+      margin-top: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 12px;
+    }
+
+    .paper-title {
       font-weight: 700;
     }
 
-    .project-link:hover {
-      text-decoration: underline;
+    .venue {
+      color: var(--muted);
     }
 
-    .timeline {
-      display: grid;
-      gap: 14px;
+    .section {
+      display: none;
     }
 
-    .timeline-item {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 18px 20px;
-    }
-
-    .timeline-item strong {
+    .section.active-section {
       display: block;
-      margin-bottom: 4px;
     }
 
-    footer {
-      padding: 42px 0 24px;
-      color: #6b7280;
-      border-top: 1px solid #e5e7eb;
-      margin-top: 36px;
-    }
-
-    @media (max-width: 800px) {
-      .hero,
-      .grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 700px) {
+      .page {
+        margin: 0 24px;
       }
 
-      nav a {
-        margin-left: 0;
-        margin-right: 14px;
+      nav {
+        gap: 18px;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 30px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 200px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <nav>
-        <strong>Mahsa Monshizadeh</strong>
-        <div>
-          <a href="#projects">Projects</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-
-      <div class="hero">
-        <div>
-          <span class="badge">PhD Student · Computer Science · Indiana University</span>
-          <h1>Trustworthy ML, GenAI/RAG, and biomedical AI.</h1>
-          <p class="subtitle">
-            I build interpretable and reliable AI systems for scientific and healthcare applications,
-            including microbiome-based prediction, confounder mitigation, retrieval-augmented generation,
-            and domain-specific LLM evaluation.
-          </p>
-
-          <div class="buttons">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button" href="https://github.com/MahsaMonshizade">GitHub</a>
-            <a class="button" href="TODO-LINKEDIN-LINK">LinkedIn</a>
-            <a class="button" href="TODO-GOOGLE-SCHOLAR-LINK">Google Scholar</a>
-            <a class="button" href="TODO-CV-LINK">CV</a>
-          </div>
-        </div>
-
-        <div class="card profile-card">
-          <h2>Research Focus</h2>
-          <p class="muted">
-            My work sits at the intersection of machine learning, large language models,
-            and biomedical data science, with an emphasis on reliability, interpretability,
-            and real-world scientific utility.
-          </p>
-
-          <div class="tag-list">
-            <span class="tag">Trustworthy ML</span>
-            <span class="tag">RAG Systems</span>
-            <span class="tag">LLM Evaluation</span>
-            <span class="tag">Biomedical AI</span>
-            <span class="tag">Microbiome</span>
-            <span class="tag">Interpretability</span>
-          </div>
-        </div>
-      </div>
-    </header>
+  <div class="page">
+    <nav>
+      <a class="active" href="#home" onclick="showSection('home', this)">Home</a>
+      <a href="#publication" onclick="showSection('publication', this)">Publication</a>
+      <a href="#talks" onclick="showSection('talks', this)">Talks</a>
+      <a href="#service" onclick="showSection('service', this)">Service & Teaching</a>
+      <a href="#blogs" onclick="showSection('blogs', this)">Blogs</a>
+      <a href="Mahsa_Monshizadeh_CV.pdf">CV</a>
+    </nav>
 
     <main>
-      <section id="projects">
-        <h2>Selected Projects</h2>
-        <p class="muted">
-          Research projects that represent my work across GenAI/RAG, LLM benchmarking,
-          interpretable machine learning, and biomedical AI.
+      <section id="home" class="section active-section">
+        <div class="intro">
+          <img class="profile-photo" src="profile.jpg" alt="Mahsa Monshizadeh profile photo" />
+
+          <div class="info">
+            <div class="name">Mahsa Monshizadeh</div>
+
+            <p>Ph.D. Student in <a href="https://luddy.indiana.edu/">Computer Science</a></p>
+            <p>Indiana University Bloomington</p>
+            <p>Advised by Professor <a href="https://yuzhenlab.github.io/">Yuzhen Ye</a></p>
+            <br />
+            <p>B.Sc. in Computer Engineering</p>
+            <p>Sharif University of Technology</p>
+          </div>
+        </div>
+
+        <p class="bio">
+          I am a Ph.D. student in Computer Science at Indiana University Bloomington. My research focuses on developing trustworthy and interpretable machine learning systems for scientific and healthcare applications. I work on confounder-free microbiome-based disease prediction, biomarker discovery, retrieval-augmented generation systems, and benchmarking large language models for domain-specific scientific workflows.
         </p>
 
-        <div class="grid">
-          <article class="card">
-            <h3>ChemBench</h3>
-            <p class="muted">
-              Benchmark for evaluating LLMs in analytical chemistry workflows, including retrieval
-              and reasoning-enhanced model evaluation.
-            </p>
-            <a class="project-link" href="https://github.com/MahsaMonshizade/ChemBench">Repository →</a>
-          </article>
+        <p>Please feel free to get in touch!</p>
 
-          <article class="card">
-            <h3>MicrobiomeCF</h3>
-            <p class="muted">
-              Confounder-free deep learning framework for microbiome-based phenotype prediction
-              and biomarker discovery.
-            </p>
-            <a class="project-link" href="https://github.com/MahsaMonshizade/MicrobiomeCF">Repository →</a>
-          </article>
+        <div class="contact-icons" aria-label="Contact links">
+          <a href="mailto:YOUR_EMAIL@iu.edu" title="Email">✉</a>
+          <a href="https://github.com/MahsaMonshizade" title="GitHub">●</a>
+          <a href="YOUR_LINKEDIN_URL" title="LinkedIn">in</a>
+          <a href="YOUR_GOOGLE_SCHOLAR_URL" title="Google Scholar">g</a>
+          <a href="YOUR_ORCID_URL" title="ORCID">iD</a>
+        </div>
 
-          <article class="card">
-            <h3>MicroKPNN</h3>
-            <p class="muted">
-              Knowledge-primed neural network for interpretable microbiome-based host phenotype prediction.
-            </p>
-            <a class="project-link" href="https://github.com/MahsaMonshizade/MicroKPNN">Repository →</a>
-          </article>
+        <hr />
 
-          <article class="card">
-            <h3>MicroKPNN-MT</h3>
-            <p class="muted">
-              Multi-task learning framework for microbiome-based phenotype and metadata prediction.
-            </p>
-            <a class="project-link" href="https://github.com/MahsaMonshizade/MicroKPNN-MT">Repository →</a>
-          </article>
+        <h2>Research interests</h2>
 
-          <article class="card">
-            <h3>SingleCell Operon-Aware scVI</h3>
-            <p class="muted">
-              Operon-aware modeling for bacterial single-cell RNA-seq denoising and representation learning.
-            </p>
-            <a class="project-link" href="https://github.com/MahsaMonshizade/SingleCell_Operon_Aware">Repository →</a>
-          </article>
+        <div class="interest">
+          <div class="interest-title">Retrieval-augmented generation and LLM evaluation for scientific workflows</div>
+          <p>
+            ChemBench: LLM benchmarking for analytical chemistry workflows · TroubleRAG: domain-adaptive RAG for LC–MS/HPLC troubleshooting
+          </p>
+        </div>
 
-          <article class="card">
-            <h3>TroubleRAG</h3>
-            <p class="muted">
-              Domain-adaptive retrieval-augmented troubleshooting system for LC–MS/HPLC analytical chemistry workflows.
-            </p>
-            <a class="project-link" href="https://github.com/MahsaMonshizade">Repository coming soon →</a>
-          </article>
+        <div class="interest">
+          <div class="interest-title">Trustworthy machine learning for microbiome-based disease prediction</div>
+          <p>
+            MicrobiomeCF · MicroKPNN · MicroKPNN-MT · confounder mitigation · interpretable biomarker discovery
+          </p>
+        </div>
+
+        <div class="interest">
+          <div class="interest-title">Biomedical AI and interpretable modeling</div>
+          <p>
+            Time-series forecasting for glucose prediction · explainable AI · bacterial single-cell modeling · operon-aware representation learning
+          </p>
         </div>
       </section>
 
-      <section id="publications">
-        <h2>Selected Publications & Manuscripts</h2>
+      <section id="publication" class="section">
+        <h2>Publication</h2>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>TroubleRAG: Domain-Adaptive RAG for Analytical Chemistry Troubleshooting</strong>
-            <span class="muted">NeurIPS AI4Science 2025 · Retrieval-augmented troubleshooting for LC–MS/HPLC workflows.</span>
-          </div>
+        <ol class="publication-list">
+          <li>
+            <span class="paper-title">TroubleRAG: Domain-Adaptive Retrieval-Augmented Generation for Analytical Chemistry Troubleshooting.</span>
+            <br />
+            <span class="venue">NeurIPS AI4Science Workshop, 2025.</span>
+          </li>
 
-          <div class="timeline-item">
-            <strong>ChemBench: Benchmarking LLMs for Analytical Chemistry Workflows</strong>
-            <span class="muted">LLM benchmarking, retrieval-enhanced reasoning, and expert-in-the-loop evaluation.</span>
-          </div>
+          <li>
+            <span class="paper-title">ChemBench: Benchmarking Large Language Models for Analytical Chemistry Workflows.</span>
+            <br />
+            <span class="venue">Manuscript / submission.</span>
+          </li>
 
-          <div class="timeline-item">
-            <strong>Confounder-Free Microbiome-Based Prediction</strong>
-            <span class="muted">Interpretable deep learning for microbiome prediction and reliable biomarker discovery.</span>
-          </div>
-        </div>
+          <li>
+            <span class="paper-title">Confounder-Free Microbiome-Based Prediction for Reliable Biomarker Discovery.</span>
+            <br />
+            <span class="venue">Manuscript in preparation.</span>
+          </li>
+
+          <li>
+            <span class="paper-title">Microbiome-based disease prediction and interpretable biomarker analysis.</span>
+            <br />
+            <span class="venue">Gut Microbes, 2024.</span>
+          </li>
+
+          <li>
+            <span class="paper-title">Inference of Bacteria–MGE Interaction Networks.</span>
+            <br />
+            <span class="venue">Frontiers in Cellular and Infection Microbiology, 2022.</span>
+          </li>
+        </ol>
       </section>
 
-      <section id="experience">
-        <h2>Experience</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>PhD Student, Computer Science · Indiana University</strong>
-            <span class="muted">
-              Research in trustworthy ML, GenAI/RAG systems, LLM evaluation, and biomedical AI.
-            </span>
-          </div>
-
-          <div class="timeline-item">
-            <strong>AI & Data Science Intern · Roche</strong>
-            <span class="muted">
-              Developed and evaluated time-series forecasting models for glucose prediction with an emphasis on interpretability.
-            </span>
-          </div>
-        </div>
+      <section id="talks" class="section">
+        <h2>Talks</h2>
+        <p>Coming soon.</p>
       </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
+      <section id="service" class="section">
+        <h2>Service & Teaching</h2>
+        <p>
+          Teaching assistant and grader for data mining, statistics, and machine learning coursework at Indiana University.
+        </p>
+        <p>
+          Reviewer for scientific conferences and journals in machine learning, bioinformatics, and biomedical AI.
+        </p>
+      </section>
 
-        <div class="card">
-          <p>Email: <a class="project-link" href="mailto:TODO-YOUR-EMAIL">TODO-YOUR-EMAIL</a></p>
-          <p>GitHub: <a class="project-link" href="https://github.com/MahsaMonshizade">github.com/MahsaMonshizade</a></p>
-          <p>LinkedIn: <a class="project-link" href="TODO-LINKEDIN-LINK">LinkedIn profile</a></p>
-          <p>Google Scholar: <a class="project-link" href="TODO-GOOGLE-SCHOLAR-LINK">Google Scholar profile</a></p>
-        </div>
+      <section id="blogs" class="section">
+        <h2>Blogs</h2>
+        <p>Coming soon.</p>
       </section>
     </main>
-
-    <footer>
-      © 2026 Mahsa Monshizadeh. Built with GitHub Pages.
-    </footer>
   </div>
+
+  <script>
+    function showSection(id, element) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active-section');
+      });
+
+      document.getElementById(id).classList.add('active-section');
+
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      element.classList.add('active');
+    }
+  </script>
 </body>
 </html>
